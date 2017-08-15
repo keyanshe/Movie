@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/common.css">
+  <style>
+    #movie-list li {
+      padding: 5px;
+      border: 5px solid #aaa;
+      border-radius: 5px;
+      background: #000;
+      cursor: pointer;
+    }
+
+    #movie-list li:hover {
+      background: #aaa;
+      color: #000;
+    }
+
+    #movie-list li+li {
+      margin-top: 10px;
+    }
+
+    #movie-list li img {
+      margin: 0 20px 0 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="clearfix">
+    <h1><a href="./index.html">Movie</a></h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">首页</a></li>
+        <li>
+          <a href="#">榜单</a>
+          <ul id="rank">
+            <li>
+              <a href="#">新片榜</a>
+            </li>
+            <li>
+              <a href="#">口碑榜</a>
+            </li>
+            <li>
+              <a href="#">北美票房榜</a>
+            </li>
+            <li>
+              <a href="#">Top250</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="search">
+      <form>
+        <input type="text" placeholder="Search..">
+        <button type="summit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h2></h2>
+      <ul id="movie-list">
+        <!-- 电影列表 -->
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <span>&copy VAN</span>
+  </footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/movieList.js"></script>
+</body>
+</html>

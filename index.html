@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/common.css">
+  <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+  <header class="clearfix">
+    <h1><a href="./index.html">Movie</a></h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#hot-movie">正在热映</a>
+        </li>
+        <li>
+          <a href="#fmovie">即将上映</a>
+        </li>
+        <li id="rank">
+          <a href="#">榜单</a>
+          <ul>
+            <li>
+              <a href="#">新片榜</a>
+            </li>
+            <li>
+              <a href="#">口碑榜</a>
+            </li>
+            <li>
+              <a href="#">北美票房榜</a>
+            </li>
+            <li>
+              <a href="#">Top250</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="search">
+      <form>
+        <input type="text" placeholder="Search..">
+        <button type="summit">搜索</button>
+      </form>
+    </div>
+  </header>
+  <div class="main">
+    <section id="hot-movie">
+      <div class="container">
+        <h2>正在热映</h2>
+        <div class="hot-movie-list clearfix">
+          <ul>
+            <!-- 热映电影 -->
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <section id="fmovie" class="future-movie">
+        <h2>即将上映</h2>
+        <ul>
+          <!-- 即将上映电影列表 -->
+        </ul>
+      </section>
+      <section class="movie-rank">
+        <h2>本周口碑榜</h2>
+        <ul>
+          <!-- 口碑榜列表 -->
+        </ul>
+      </section>
+    </div>
+  </div>
+  <footer>
+    <span>&copy VAN</span>
+  </footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

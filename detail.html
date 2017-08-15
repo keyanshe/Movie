@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/common.css">
+  <style>
+    .movie-mes img {
+      display: block;
+      margin: 10px auto;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="clearfix">
+    <h1><a href="./index.html">Movie</a></h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">首页</a></li>
+        <li>
+          <a href="#">榜单</a>
+          <ul id="rank">
+            <li>
+              <a href="#">新片榜</a>
+            </li>
+            <li>
+              <a href="#">口碑榜</a>
+            </li>
+            <li>
+              <a href="#">北美票房榜</a>
+            </li>
+            <li>
+              <a href="#">Top250</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="search">
+      <form>
+        <input type="text" placeholder="Search..">
+        <button type="summit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="movie-mes container">
+      <!-- 电影信息 -->
+    </div>
+  </div>
+
+  <footer>
+    <span>&copy VAN</span>
+  </footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+    var url = 'https://api.douban.com/v2/movie/subject/' + localStorage.id
+    getData(url, function (data) {
+      var img = $('<img></img>')
+      var div = $('<div></div>')
+      var h2 = $('<h2></h2>')
+      var p1 = $('<p></p>')
+      var p2 = $('<p></p>')
+      var p3 = $('<p></p>')
+      var p4 = $('<p></p>')
+      var p5 = $('<p></p>')
+      var p6 = $('<p></p>')
+
+      var actor = data.casts.map(function (item) {
+        return item.name
+      })
+
+      img.attr('src', data.images.large)
+      h2.append(data.title)
+      p1.append('导演：' + data.directors[0].name)
+      p2.append('年份：' + data.year)
+      p3.append('主演：' + actor.join('/ '))
+      p4.append('类型：' + data.genres.join('/ '))
+      p5.append('制作国家/地区：' + data.countries)
+      p6.append('简介：' + data.summary)
+      div.addClass('clearfix')
+      div.append(h2, p1, p2, p3, p4, p5, p6)
+      $('.movie-mes').append(img, div)
+
+      localStorage = null
+    })
+  </script>
+</body>
+</html>
