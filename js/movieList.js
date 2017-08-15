@@ -50,7 +50,7 @@ $(function () {
   }
 
   function newMovieRender () {
-    var url = 'http://api.douban.com/v2/movie/new_movies?apikey=0df993c66c0c636e29ecbb5344252a4a'
+    var url = 'https://api.douban.com/v2/movie/new_movies?apikey=0df993c66c0c636e29ecbb5344252a4a'
     $('.main h2').text(localStorage.title)
 
     getData(url, function (data) {
@@ -60,7 +60,7 @@ $(function () {
   }
 
   function topMovieRender () {
-    var url = 'http://api.douban.com/v2/movie/top250?apikey=0df993c66c0c636e29ecbb5344252a4a'
+    var url = 'https://api.douban.com/v2/movie/top250?apikey=0df993c66c0c636e29ecbb5344252a4a'
     $('.main h2').text(localStorage.title)
 
     getData(url, function (data) {
@@ -70,7 +70,7 @@ $(function () {
   }
 
   function usBoxRender () {
-    var url = 'http://api.douban.com/v2/movie/us_box?apikey=0df993c66c0c636e29ecbb5344252a4a'
+    var url = 'https://api.douban.com/v2/movie/us_box?apikey=0df993c66c0c636e29ecbb5344252a4a'
     $('.main h2').text(localStorage.title)
 
     getData(url, function (data) {
@@ -80,7 +80,7 @@ $(function () {
   }
 
   function weeklyMovieRender () {
-    var url = 'http://api.douban.com/v2/movie/weekly?apikey=0df993c66c0c636e29ecbb5344252a4a'
+    var url = 'https://api.douban.com/v2/movie/weekly?apikey=0df993c66c0c636e29ecbb5344252a4a'
     $('.main h2').text(localStorage.title)
 
     getData(url, function (data) {
