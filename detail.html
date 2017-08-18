@@ -63,7 +63,7 @@
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="./js/main.js"></script>
   <script>
-    var url = 'https://api.douban.com/v2/movie/subject/' + localStorage.id
+    var url = 'https://api.douban.com/v2/movie/subject/' + window.localStorage.id
     getData(url, function (data) {
       var img = $('<img></img>')
       var div = $('<div></div>')
@@ -90,8 +90,6 @@
       div.addClass('clearfix')
       div.append(h2, p1, p2, p3, p4, p5, p6)
       $('.movie-mes').append(img, div)
-
-      localStorage = null
     })
   </script>
 </body>

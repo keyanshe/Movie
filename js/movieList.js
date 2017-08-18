@@ -1,7 +1,8 @@
 $(function () {
   function listRender (data, el) {
-    data.map(function (item) {
+    var aLi = data.map(function (item) {
       item = item.subject || item
+
       var li = $('<li></li>')
       var img = $('<img></img>')
       var h3 = $('<h3></h3>')
@@ -35,7 +36,11 @@ $(function () {
         .attr('data-id', item.id)
         .append(img, h3, p1, p2, p3, p4)
 
-      el.append(li)
+      return li
+    })
+
+    aLi.map(function (oli) {
+      el.append(oli)
     })
   }
 
@@ -45,17 +50,14 @@ $(function () {
 
     getData(url, function (data) {
       listRender(data.subjects, $('#movie-list'))
-      localStorage.clear()
     })
   }
 
   function newMovieRender () {
     var url = 'https://api.douban.com/v2/movie/new_movies?apikey=0df993c66c0c636e29ecbb5344252a4a'
     $('.main h2').text(localStorage.title)
-
     getData(url, function (data) {
       listRender(data.subjects, $('#movie-list'))
-      localStorage.clear()
     })
   }
 
@@ -65,7 +67,6 @@ $(function () {
 
     getData(url, function (data) {
       listRender(data.subjects, $('#movie-list'))
-      localStorage.clear()
     })
   }
 
@@ -75,7 +76,6 @@ $(function () {
 
     getData(url, function (data) {
       listRender(data.subjects, $('#movie-list'))
-      localStorage.clear()
     })
   }
 
@@ -85,20 +85,18 @@ $(function () {
 
     getData(url, function (data) {
       listRender(data.subjects, $('#movie-list'))
-      localStorage.clear()
     })
   }
 
   $('#movie-list').on('click', function (e) {
+    var el = e.target
     var id
-    if (e.target.nodeName === 'LI') {
-      id = e.target.getAttribute('data-id')
-      localStorage.id = id
-    } else {
-      id = e.target.parentNode.getAttribute('data-id')
-      localStorage.id = id
+    while (el.nodeName !== 'LI') {
+      el = el.parentNode
     }
 
+    id = el.getAttribute('data-id')
+    localStorage.id = id
     location.href = './detail.html'
   })
 

@@ -21,7 +21,6 @@ $('.search button').on('click', function (e) {
 })
 
 $('#rank').on('click', function (e) {
-  console.log(e.target.innerText)
   localStorage.title = e.target.innerText
   location.href = './movieList.html'
 })
