@@ -11,5 +11,4 @@ gulp.task('start', function () {
   })
 
   gulp.watch(['*.html', 'style/**/*.css', 'js/**/*.js'], {cwd: './'}, reload)
-
 })
