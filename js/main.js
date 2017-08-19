@@ -10,9 +10,13 @@ function getData (_url, func) {
 }
 
 function search (str, title) {
-  localStorage.searchStr = str
-  localStorage.title = title
-  location.href = './movieList.html'
+  if (str.trim() === '') {
+    alert('请输入')
+  } else {
+    localStorage.searchStr = str
+    localStorage.title = title
+    location.href = './movieList.html'
+  }
 }
 
 $('.search button').on('click', function (e) {

@@ -1,0 +1,47 @@
+.movie-mes img {
+  display: block;
+  margin: 10px auto;
+}
+
+.movie-mes span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.movie-comments ul {
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+
+.movie-comments-item {
+  padding: 8px;
+  overflow: hidden;
+}
+
+.movie-comments-item + .movie-comments-item {
+  border-top: 1px solid #fff;
+}
+
+.movie-comments-item img {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+.movie-comments-item div {
+  width: 880px;
+}
+
+.movie-comments-item span {
+  color: #0088ff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+span.comment-time {
+  color: #aaa;
+}
+
+.movie-comments h3 {
+  margin-bottom: 10px;
+}

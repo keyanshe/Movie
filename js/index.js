@@ -1,80 +1,61 @@
 function hotMovieRender () {
   var $oUl = $('.hot-movie-list')
   var url = 'https://api.douban.com/v2/movie/in_theaters'
-  var aLi = []
 
   getData(url, function (d) {
     var subjects = d.subjects
-    aLi = subjects.map(function (item, index) {
-      var li = $('<li></li>')
-      var img = $('<img></img>')
-      var div = $('<div></div>')
-      var h3 = $('<h3></h3>')
-      var p = $('<p></p>')
-
-      p.append('评分：' + item.rating.average)
-
-      h3.append(item.title)
-
-      div.addClass('hot-movie-mes')
-      div.append(h3, p)
-
-      img.attr('src', item.images.large)
-
-      li.append(img, div)
-      li.attr('data-id', item.id)
-      return li
+    var html = ''
+    subjects.forEach(function (item, index) {
+      html += '<li data-id="' +
+        item.id +
+        '"><img src="' +
+        item.images.large +
+        '" /><div class="hot-movie-mes"><h3>' +
+        item.title +
+        '</h3><p>' +
+        '评分：' + item.rating.average +
+        '</p></div></li>'
     })
 
-    aLi.map(function (oli) {
-      $oUl.append(oli)
-    })
+    $oUl.append(html)
   })
 }
 
 function futureMovieRender () {
   var $ul = $('.future-movie ul')
   var url = 'https://api.douban.com/v2/movie/coming_soon'
-  var aLi = []
+  var html = ''
   getData(url, function (d) {
     var subjects = d.subjects
     for (var i = 0; i < 6; i++) {
-      var li = $('<li></li>')
-      var div = $('<div></div>')
-      var h3 = $('<h3></h3>')
-      var img = $('<img></img>')
-
-      h3.append(subjects[i].title)
-      img.attr('src', subjects[i].images.large)
-      img.attr('data-id', subjects[i].id)
-      div.append(img, h3)
-      li.append(div)
-      aLi.push(li)
+      html += '<li><div><img src="' +
+        subjects[i].images.large +
+        '" data-id="' +
+        subjects[i].id +
+        '" /><h3>' +
+        subjects[i].title +
+        '</h3></div></li>'
     }
-    aLi.map(function (oli) {
-      $ul.append(oli)
-    })
+    $ul.append(html)
   })
 }
 
 function mRankRender () {
   var $ul = $('.movie-rank ul')
   var url = 'https://api.douban.com/v2/movie/weekly?apikey=0df993c66c0c636e29ecbb5344252a4a'
-  var aLi = []
+  var html = ''
   getData(url, function (d) {
     var subjects = d.subjects
-    aLi = subjects.map(function (item) {
-      var li = $('<li></li>')
+    subjects.forEach(function (item) {
       var str = item.rank + '. ' + item.subject.title
-
-      li.append(str)
-      li.attr('data-id', item.subject.id)
-
-      return li
+      html += '<li data-id="' +
+        item.subject.id +
+        '">' +
+        str +
+        '</li>'
     })
-    aLi.map(function (oli) {
-      $ul.append(oli)
-    })
+
+    $ul.append(html)
   })
 }
 

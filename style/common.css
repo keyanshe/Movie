@@ -18,6 +18,10 @@
   float: left;
 }
 
+.fr {
+  float: right;
+}
+
 body {
   background-color: #022;
   color: #fff;
