@@ -31,7 +31,7 @@
     })
   }
   function commentsRender () {
-    var url = 'http://api.douban.com/v2/movie/subject/' + localStorage.id + '/comments?apikey=0df993c66c0c636e29ecbb5344252a4a'
+    var url = 'https://api.douban.com/v2/movie/subject/' + localStorage.id + '/comments?apikey=0df993c66c0c636e29ecbb5344252a4a'
     var html = ''
     getData(url, function (data) {
       data.comments.forEach(function (item) {
