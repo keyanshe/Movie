@@ -1,15 +1,15 @@
-$(function () {
-  function getData (_url, func) {
-    $.ajax({
-      type: 'GET',
-      url: _url,
-      dataType: 'jsonp',
-      success: function (data) {
-        func(data)
-      }
-    })
-  }
+function getData (_url, func) {
+  $.ajax({
+    type: 'GET',
+    url: _url,
+    dataType: 'jsonp',
+    success: function (data) {
+      func(data)
+    }
+  })
+}
 
+$(function () {
   function search (str, title) {
     if (str.trim() === '') {
       alert('请输入')
