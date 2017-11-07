@@ -1,0 +1,25 @@
+#movie-list li {
+  padding: 5px;
+  border: 5px solid #aaa;
+  border-radius: 5px;
+  background: #000;
+  cursor: pointer;
+}
+
+#movie-list li:hover {
+  background: #aaa;
+  color: #000;
+}
+
+#movie-list li+li {
+  margin-top: 10px;
+}
+
+#movie-list li img {
+  margin: 0 20px 0 10px;
+}
+
+.rank-list-item img{
+  width: 150px;
+  height: 200px;
+}
