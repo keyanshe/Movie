@@ -1,7 +1,7 @@
 $(function () {
   function hotMovieRender () {
     var $oUl = $('.hot-movie-list')
-    var url = 'https://api.douban.com/v2/movie/in_theaters'
+    var url = 'http://api.douban.com/v2/movie/in_theaters'
 
     getData(url, function (d) {
       var subjects = d.subjects

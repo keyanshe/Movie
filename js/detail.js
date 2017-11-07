@@ -39,6 +39,7 @@ $(function () {
       $('.movie-comments ul').append(html)
     })
   }
+
   detailRender()
   commentsRender()
 })
